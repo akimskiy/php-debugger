@@ -438,7 +438,7 @@ class DebugUI:
     self.line     = None
     self.winbuf   = {}
     self.cursign  = None
-    self.sessfile = "/tmp/debugger_vim_saved_session." + str(os.getpid())
+    self.sessfile = "C:/tmp/debugger_vim_saved_session." + str(os.getpid())
     self.minibufexpl = minibufexpl
  
   def debug_mode(self):
@@ -554,7 +554,7 @@ class DbgProtocol:
     try:
       serv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
       serv.bind(('', self.port))
-      serv.listen(5)
+      serv.listen(10)
       (self.sock, address) = serv.accept()
     except socket.timeout:
       serv.close()
